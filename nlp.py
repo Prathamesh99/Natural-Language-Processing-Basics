@@ -1,4 +1,5 @@
-import nltk 
+import nltk
+import pandas as pd
 nltk.download()
 
 paragraph = """Choke packet technique is applicable to both virtual networks as well as datagram subnets. A choke packet is a packet sent by a node to the source to inform it of congestion. Each router monitor its resources and the utilization at each of its output lines. whenever the resource utilization exceeds the threshold value which is set by the administrator, the router directly sends a choke packet to the source giving it a feedback to reduce the traffic. The intermediate nodes through which the packets has traveled are not warned about congestion."""
@@ -46,3 +47,16 @@ for tw in tagged_words:
     word_tags.append(tw[0]+"_"+tw[1])
     
 tagged_paragraph = ' '.join(word_tags)
+
+content = "The Taj Mahal was built by Emperor Shah Jahan"
+
+content_w = nltk.word_tokenize(content)
+tagged = nltk.pos_tag(content_w)
+
+nameEnt = nltk.ne_chunk(tagged)
+nameEnt.draw()
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
